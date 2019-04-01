@@ -39,6 +39,8 @@ body {
 
 .products h3 {
   margin: 5px 0 1px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .products li {
@@ -63,8 +65,6 @@ body {
 
 .products.small h3 {
   margin: 5px 0 1px;
-  text-overflow: ellipsis;
-  overflow: hidden;
   font-size: 14px;
   font-weight: normal;
 }

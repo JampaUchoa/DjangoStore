@@ -32,6 +32,8 @@ body {
 
     h3{
         margin: 5px 0 1px;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     li{
         width: 33%;
@@ -53,8 +55,6 @@ body {
         }
         h3{
             margin: 5px 0 1px;
-            text-overflow: ellipsis;
-            overflow: hidden;
             font-size: 14px;
             font-weight: normal;
         }

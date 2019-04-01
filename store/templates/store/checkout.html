@@ -1,8 +1,8 @@
 {% extends "store/base.html" %}
 {% block content %}
-<h1> On your cart </h1>
 
-{% if order.status == 'Open' %}
+{% if order.status == 'Open' and order.products.all %}
+<h1> On your cart </h1>
 
     <ul class="products small">
         {% for product in order.products.all %}
@@ -20,9 +20,8 @@
     </form>
 
 {% else %}
-
     <h1> Your cart is empty </h1>
-
+    <a href="{% url "products" %}"> < Back </a>
 {% endif %}
 
 {% endblock %}
