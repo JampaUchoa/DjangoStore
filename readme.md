@@ -1,5 +1,5 @@
 # Django Store
- An example of a store made in django
+An example of a store made in django, the code itself is inside the /store folder
 
 ## Requirements
 This project runs with docker and python 3, make sure to install those and to get server started run
