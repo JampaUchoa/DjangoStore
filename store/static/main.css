@@ -35,6 +35,8 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
 }
 
 .products h3 {
@@ -44,13 +46,15 @@ body {
 }
 
 .products li {
-  width: 33%;
+  width: 200px;
+  margin: 0 10px;
 }
 
 .products img {
-  height: 200px;
-  width: 200px;
-  background-color: #eee;
+  height: 120px;
+  width: 180px;
+  background: linear-gradient(135deg, #14b0ff 0%, #07ff8b 100%);
+  display: block;
 }
 
 .products p {
@@ -60,7 +64,6 @@ body {
 .products.small img {
   height: 70px;
   width: 70px;
-  background-color: #eee;
 }
 
 .products.small h3 {
@@ -70,7 +73,7 @@ body {
 }
 
 .products.small li {
-  width: 100px;
+  width: 70px;
   margin: 0 10px;
 }
 

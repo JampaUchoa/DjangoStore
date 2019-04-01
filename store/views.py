@@ -1,12 +1,13 @@
+import datetime
 from django.shortcuts import render
 
 # Create your views here.
 from .models import *
 from .forms import ClientForm
 from django.http import HttpResponseRedirect
-import datetime
 
 def products(request):
+    """ Return a product list """
     products_list = Product.objects.values()
     cart = Order.objects.last().products.values_list('id', flat=True)
 
@@ -14,6 +15,7 @@ def products(request):
     return render(request, 'store/products.html', context)
 
 def client_register(request):
+    """ Client registration portal """
     # Get registering page
     if request.method == 'GET':
         client_form = ClientForm()
@@ -28,11 +30,13 @@ def client_register(request):
             return HttpResponseRedirect("/")
 
 def orders(request):
+    """ Client orders index """
     order_list = Order.objects.all().prefetch_related('products')
     context = {'orders': order_list}
     return render(request, 'store/orders.html', context)
 
-def add_to_cart(request, product_id):
+def toggle_cart(request, product_id):
+    """ Toggles a product form the shopping list """
     order = Order.objects.last()
     if order.status == "Closed":
         order = Order(status="Open", created_at=datetime.datetime.now(), 
@@ -46,6 +50,7 @@ def add_to_cart(request, product_id):
     return HttpResponseRedirect("/")
 
 def checkout(request):
+    """ Shows all the orders so far """
     order = Order.objects.last()
 
     if request.method == 'GET':

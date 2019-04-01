@@ -6,15 +6,16 @@
         {% for product in products %}
             <li>
             <img/>
-            <h3>{{ product.name }} - R${{ product.price }}</h3>
-            <p>
-                {{ product.description }}
-            </p>
             {% if order.status == "Closed" or not product.id in cart %}
                 <a href="{% url 'add' product.id %}"> + Add </a>
             {% else %}
                 <a href="{% url 'add' product.id %}"> - Remove </a>
             {% endif %}
+
+            <h3>{{ product.name }} - R${{ product.price }}</h3>
+            <p>
+                {{ product.description }}
+            </p>
             </li>
         {% endfor %}
         </ul>
