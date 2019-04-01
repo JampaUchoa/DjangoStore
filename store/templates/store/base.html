@@ -6,13 +6,14 @@
     </head>
     <body>
         <div class="header">
-            <a href=""{% url 'products' %}""> 
+            <a href="{% url 'products' %}"> 
             <h1> SuperMercado</h1>
             </a>
             <div class="menus">
                 <a href="/admin"> Admin </a>
                 <a href="/checkout"> Checkout </a>
                 <a href="{% url 'register' %}"> New client </a>
+                <a href="{% url 'orders' %}"> Orders </a>
             </div>
         </div>
         <div class="content">

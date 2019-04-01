@@ -10,6 +10,11 @@
             <p>
                 {{ product.description }}
             </p>
+            {% if order.status == "Closed" or not product.id in cart %}
+                <a href="{% url 'add' product.id %}"> + </a>
+            {% else %}
+                <a href="{% url 'add' product.id %}"> - </a>
+            {% endif %}
             </li>
         {% endfor %}
         </ul>

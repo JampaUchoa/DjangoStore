@@ -1,0 +1,28 @@
+{% extends "store/base.html" %}
+{% block content %}
+<h1> On your cart </h1>
+
+{% if order.status == 'Open' %}
+
+    <ul class="products small">
+        {% for product in order.products.all %}
+            <li>
+                <img/>
+                <h3> {{product.name}} </h3>
+                <p></p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <form action="{% url 'checkout' %}" method="post">
+    {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+
+{% else %}
+
+    <h1> Your cart is empty </h1>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "store/base.html" %}
+{% block content %}
+
+{% if orders %}
+    {% for order in orders %}
+        <h3> Order By: {{order.client.name }} </h3>
+        <span class="status"> {{order.status}} </span>
+        <span class="time"> {{order.created_at}} </span>
+            <ul class="products small">
+                {% for product in order.products.all %}
+                    <li>
+                        <img/>
+                        <h3> {{product.name}} </h3>
+                        <p></p>
+                    </li>
+                {% endfor %}
+            </ul>
+    {% endfor %}
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class Client(models.Model):
     name = models.CharField(max_length=200)
@@ -26,4 +27,4 @@ class Order(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.status + "-" + self.created_at
+        return self.status + " - " + self.created_at.strftime("%m/%d/%Y, %H:%M:%S")

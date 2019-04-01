@@ -45,6 +45,26 @@ body {
         margin: 0 0 25px;
     }
 
+    &.small{
+        img {
+            height: 70px;
+            width: 70px;
+            background-color: #eee;
+        }
+        h3{
+            margin: 5px 0 1px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        li{
+            width: 100px;
+            margin: 0 10px;
+        }
+        
+    }
+
 }
 
 a{
