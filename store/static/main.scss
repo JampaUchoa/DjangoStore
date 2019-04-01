@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.header{
+    background-color: #2586ff;
+    color: #fff;
+    padding: 10px 50px;
+    a {
+        color: #fff !important;
+        margin: 0 12px;
+    }
+    h1{
+        display: inline-block;
+    }
+    .menus{
+        float: right;
+        margin: 32px 40px 0;
+    }
+}
+
+.content{
+    max-width: 780px;
+    margin: 0 auto
+}
+
+.products{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    h3{
+        margin: 5px 0 1px;
+    }
+    li{
+        width: 33%;
+    }
+    img {
+        height: 200px;
+        width: 200px;
+        background-color: #eee;
+    }
+    p{
+        margin: 0 0 25px;
+    }
+
+}
+
+a{
+    text-decoration: none;
+}

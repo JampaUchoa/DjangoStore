@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+    <head>
+        <title> Store </title>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+    </head>
+    <body>
+        <div class="header">
+            <a href=""{% url 'products' %}""> 
+            <h1> SuperMercado</h1>
+            </a>
+            <div class="menus">
+                <a href="/admin"> Admin </a>
+                <a href="/checkout"> Checkout </a>
+                <a href="{% url 'register' %}"> New client </a>
+            </div>
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
